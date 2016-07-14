@@ -1,4 +1,4 @@
-# Dropwizard Oor Bundle
+# Dropwizard Oor Bundle [![Travis build status](https://travis-ci.org/phaneesh/dropwizard-oor.svg?branch=master)](https://travis-ci.org/phaneesh/dropwizard-oor)
 
 This bundle adds a healthcheck which can used to take the application out of rotation from
 a loadbalancer which uses /healthcheck endpoint for healthchecks
@@ -34,7 +34,7 @@ This makes it easier perform rolling deployments & maintenance of dropwizard app
     public void initialize(final Bootstrap...) {
         bootstrap.addBundle(new OorBundle() {
             
-            public abstract boolean withOor() {
+            public boolean withOor() {
                 return false;
             }
             
@@ -47,5 +47,6 @@ This makes it easier perform rolling deployments & maintenance of dropwizard app
 * ```curl -XPOST http://host:adminport/tasks/bir``` for bringing node back into rotation
 
 ## Note
-Please allow the node to run for the grace period and a bit more that you have configured in your load balancer healthchecks
-so that the load balancer can drain all the requests gracefully.
+Please allow the node to run for the grace period and a bit more that
+you have configured in your load balancer healthchecks so that the
+load balancer can drain all the requests gracefully.
