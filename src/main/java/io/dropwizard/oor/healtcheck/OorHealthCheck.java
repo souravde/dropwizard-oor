@@ -41,4 +41,8 @@ public class OorHealthCheck extends HealthCheck {
             return Result.healthy();
         }
     }
+
+    public static void setOor(boolean state) {
+        oor.getAndSet(state);
+    }
 }
